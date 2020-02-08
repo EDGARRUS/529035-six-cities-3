@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов» [![Build status][travis-image]][travis-url]
 
 * Студент: [Эдуард Шишканов](https://up.htmlacademy.ru/react/3/user/529035).
-* Наставник: `Неизвестно`.
+* Наставник: [Андрей Фидельман](https://htmlacademy.ru/profile/id773165).
 
 ---
 
