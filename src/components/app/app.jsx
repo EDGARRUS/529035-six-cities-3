@@ -9,7 +9,8 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  houses: PropTypes.arrayOf(PropTypes.string).isRequired
+  houses: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onTitleButtonClick: PropTypes.func.isRequired,
 };
 
 export default App;
