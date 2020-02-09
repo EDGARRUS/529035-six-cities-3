@@ -1,9 +1,13 @@
 import React from "react";
 import Main from "../main/main.jsx";
+import PropTypes from "prop-types";
 
 const App = (props) => {
-  // eslint-disable-next-line react/prop-types
-  return <div><Main count={props.count} /></div>;
+  return <div><Main houses={props.houses} /></div>;
+};
+
+App.propTypes = {
+  houses: PropTypes.array.isRequired
 };
 
 export default App;
