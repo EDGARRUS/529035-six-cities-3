@@ -1,8 +1,13 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Main = (props) => {
-  // eslint-disable-next-line react/prop-types
-  return <h1>Количество предложений {props.count}</h1>;
+  return <div className="offers"><h1>Предложения</h1>{props.houses.map((house, i) => <h3 key={i} onClick={props.onTitleButtonClick}>{house}</h3>)}</div>;
+};
+
+Main.propTypes = {
+  houses: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onTitleButtonClick: PropTypes.func.isRequired,
 };
 
 export default Main;

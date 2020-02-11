@@ -2,6 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/app/app.jsx";
 
-const countOffers = 56;
+const houses = [`Beautiful & luxurious apartment at great location`, `Wood and stone place`, `Wonderful hosue for rich people`];
 
-ReactDOM.render(<App count={countOffers}/>, document.querySelector(`#root`));
+ReactDOM.render(<App houses={houses}/>, document.querySelector(`#root`));
