@@ -7,29 +7,32 @@ export class OfferCard extends PureComponent {
     this.state = {
       isPremium: this.props.offerData.isPremium,
     };
-
-    this.setActiveOfferCard = this.setActiveOfferCard.bind(this);
-
-    // const handleOfferCardClick = this.props.onOfferCardClickHandler
+    this._titleClickHandler = this._titleClickHandler.bind(this);
   }
 
-  premiumMarkup() {
+  getPremiumMarkup() {
     return (
       <div className="place-card__mark">
         <span>Premium</span>
       </div>
     );
   }
-  setActiveOfferCard() {
-    const {mouseOverCardHandler} = this.props;
-    mouseOverCardHandler(this);
+
+  _titleClickHandler(offerData) {
+    const {titleClickHandler} = this.props;
+    titleClickHandler(offerData);
   }
+
   render() {
     const {title, image, price, type, rate} = this.props.offerData;
 
+    function generateRateStyle(rating) {
+      return `${rating * 20}%`;
+    }
+
     return (
-      <article className="cities__place-card place-card" onMouseOver={this.setActiveOfferCard}>
-        {this.state.isPremium ? this.premiumMarkup() : ``}
+      <article className="cities__place-card place-card">
+        {this.state.isPremium ? this.getPremiumMarkup() : ``}
         <div className="cities__image-wrapper place-card__image-wrapper">
           <a href="#">
             <img className="place-card__image" src={image} width="260" height="200" alt="Place image"/>
@@ -50,12 +53,14 @@ export class OfferCard extends PureComponent {
           </div>
           <div className="place-card__rating rating">
             <div className="place-card__stars rating__stars">
-              <span style={{width: rate * 10}}></span>
+              <span style={{width: generateRateStyle(rate)}}></span>
               <span className="visually-hidden">Rating</span>
             </div>
           </div>
           <h2 className="place-card__name">
-            <a href="#">{title}</a>
+            <a href="#" onClick={() => {
+              this._titleClickHandler(this.props.offerData);
+            }}>{title}</a>
           </h2>
           <p className="place-card__type">{type}</p>
         </div>
@@ -67,11 +72,20 @@ OfferCard.propTypes = {
   offerData: PropTypes.exact({
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
+    gallery: PropTypes.arrayOf(PropTypes.string).isRequired,
     price: PropTypes.number.isRequired,
     type: PropTypes.string.isRequired,
     rate: PropTypes.number,
     isPremium: PropTypes.bool.isRequired,
+    description: PropTypes.string,
+    bedrooms: PropTypes.number.isRequired,
+    maxGuests: PropTypes.number.isRequired,
+    devices: PropTypes.arrayOf(PropTypes.string),
+    host: PropTypes.exact({
+      avatar: PropTypes.string,
+      name: PropTypes.string.isRequired,
+      isSuper: PropTypes.bool.isRequired,
+    }),
   }),
-
-  mouseOverCardHandler: PropTypes.func
+  titleClickHandler: PropTypes.func,
 };

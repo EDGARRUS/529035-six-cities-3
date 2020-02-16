@@ -70,7 +70,7 @@ export class Main extends PureComponent {
                 </ul>
               </form>
 
-              <OffersList offersData={offersData}/>
+              <OffersList offersData={offersData} openOfferDetail={this.props.openOfferDetail}/>
 
             </section>
             <div className="cities__right-section">
@@ -84,5 +84,24 @@ export class Main extends PureComponent {
 }
 
 Main.propTypes = {
-  offersData: PropTypes.array.isRequired,
+  offersData: PropTypes.arrayOf(PropTypes.exact({
+    title: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    gallery: PropTypes.arrayOf(PropTypes.string).isRequired,
+    price: PropTypes.number.isRequired,
+    type: PropTypes.string.isRequired,
+    rate: PropTypes.number,
+    isPremium: PropTypes.bool.isRequired,
+    description: PropTypes.string,
+    bedrooms: PropTypes.number.isRequired,
+    maxGuests: PropTypes.number.isRequired,
+    devices: PropTypes.arrayOf(PropTypes.string),
+    host: PropTypes.exact({
+      avatar: PropTypes.string,
+      name: PropTypes.string.isRequired,
+      isSuper: PropTypes.bool.isRequired,
+    })
+  })),
+
+  openOfferDetail: PropTypes.func.isRequired
 };

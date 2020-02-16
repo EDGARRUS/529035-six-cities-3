@@ -8,14 +8,12 @@ Enzyme.configure({
   adapter: new Adapter(),
 });
 
-it(`При наведении активный оффер передается в листинг`, () => {
-  let offer = null;
-  function onMouseOverCardHandler(data) {
-    offer = data;
-  }
-  const offerCard = shallow(<OfferCard offerData={offersData[1]} mouseOverCardHandler={onMouseOverCardHandler}/>
+it(`Сработал обработчик по клику на Title`, () => {
+  const titleClickHandler = jest.fn();
+
+  const offerCard = shallow(<OfferCard offerData={offersData[1]} titleClickHandler={titleClickHandler}/>
   );
 
-  offerCard.find(`.place-card`).simulate(`mouseover`);
-  expect(offer).not.toBeNull();
+  offerCard.find(`.place-card__name a`).simulate(`click`);
+  expect(titleClickHandler).toHaveBeenCalledTimes(1);
 });

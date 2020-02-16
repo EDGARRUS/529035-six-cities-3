@@ -6,7 +6,6 @@ exports[`<OffersList /> Testing 1`] = `
 >
   <article
     className="cities__place-card place-card"
-    onMouseOver={[Function]}
   >
     <div
       className="place-card__mark"
@@ -80,7 +79,7 @@ exports[`<OffersList /> Testing 1`] = `
           <span
             style={
               Object {
-                "width": 40,
+                "width": "80%",
               }
             }
           />
@@ -96,6 +95,7 @@ exports[`<OffersList /> Testing 1`] = `
       >
         <a
           href="#"
+          onClick={[Function]}
         >
           Beautiful & luxurious apartment at great location
         </a>
@@ -109,7 +109,6 @@ exports[`<OffersList /> Testing 1`] = `
   </article>
   <article
     className="cities__place-card place-card"
-    onMouseOver={[Function]}
   >
     
     <div
@@ -177,7 +176,7 @@ exports[`<OffersList /> Testing 1`] = `
           <span
             style={
               Object {
-                "width": 50,
+                "width": "100%",
               }
             }
           />
@@ -193,6 +192,7 @@ exports[`<OffersList /> Testing 1`] = `
       >
         <a
           href="#"
+          onClick={[Function]}
         >
           Wood and stone place
         </a>
@@ -206,9 +206,14 @@ exports[`<OffersList /> Testing 1`] = `
   </article>
   <article
     className="cities__place-card place-card"
-    onMouseOver={[Function]}
   >
-    
+    <div
+      className="place-card__mark"
+    >
+      <span>
+        Premium
+      </span>
+    </div>
     <div
       className="cities__image-wrapper place-card__image-wrapper"
     >
@@ -219,7 +224,7 @@ exports[`<OffersList /> Testing 1`] = `
           alt="Place image"
           className="place-card__image"
           height="200"
-          src="img/apartment-03.jpg"
+          src="img/apartment-01.jpg"
           width="260"
         />
       </a>
@@ -274,7 +279,7 @@ exports[`<OffersList /> Testing 1`] = `
           <span
             style={
               Object {
-                "width": 30,
+                "width": "60%",
               }
             }
           />
@@ -290,6 +295,7 @@ exports[`<OffersList /> Testing 1`] = `
       >
         <a
           href="#"
+          onClick={[Function]}
         >
           Canal View Prinsengracht
         </a>
@@ -303,7 +309,6 @@ exports[`<OffersList /> Testing 1`] = `
   </article>
   <article
     className="cities__place-card place-card"
-    onMouseOver={[Function]}
   >
     
     <div
@@ -371,7 +376,7 @@ exports[`<OffersList /> Testing 1`] = `
           <span
             style={
               Object {
-                "width": 25,
+                "width": "50%",
               }
             }
           />
@@ -387,6 +392,7 @@ exports[`<OffersList /> Testing 1`] = `
       >
         <a
           href="#"
+          onClick={[Function]}
         >
           Nice, cozy, warm big bed apartment
         </a>

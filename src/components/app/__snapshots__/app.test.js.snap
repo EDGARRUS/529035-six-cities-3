@@ -16,7 +16,15 @@ Array [
         >
           <a
             className="header__logo-link header__logo-link--active"
-          />
+          >
+            <img
+              alt="6 cities logo"
+              className="header__logo"
+              height="41"
+              src="img/logo.svg"
+              width="81"
+            />
+          </a>
         </div>
         <nav
           className="header__nav"
@@ -215,7 +223,6 @@ Array [
           >
             <article
               className="cities__place-card place-card"
-              onMouseOver={[Function]}
             >
               <div
                 className="place-card__mark"
@@ -289,7 +296,7 @@ Array [
                     <span
                       style={
                         Object {
-                          "width": 40,
+                          "width": "80%",
                         }
                       }
                     />
@@ -305,6 +312,7 @@ Array [
                 >
                   <a
                     href="#"
+                    onClick={[Function]}
                   >
                     Beautiful & luxurious apartment at great location
                   </a>
@@ -318,7 +326,6 @@ Array [
             </article>
             <article
               className="cities__place-card place-card"
-              onMouseOver={[Function]}
             >
               
               <div
@@ -386,7 +393,7 @@ Array [
                     <span
                       style={
                         Object {
-                          "width": 50,
+                          "width": "100%",
                         }
                       }
                     />
@@ -402,6 +409,7 @@ Array [
                 >
                   <a
                     href="#"
+                    onClick={[Function]}
                   >
                     Wood and stone place
                   </a>
@@ -415,9 +423,14 @@ Array [
             </article>
             <article
               className="cities__place-card place-card"
-              onMouseOver={[Function]}
             >
-              
+              <div
+                className="place-card__mark"
+              >
+                <span>
+                  Premium
+                </span>
+              </div>
               <div
                 className="cities__image-wrapper place-card__image-wrapper"
               >
@@ -428,7 +441,7 @@ Array [
                     alt="Place image"
                     className="place-card__image"
                     height="200"
-                    src="img/apartment-03.jpg"
+                    src="img/apartment-01.jpg"
                     width="260"
                   />
                 </a>
@@ -483,7 +496,7 @@ Array [
                     <span
                       style={
                         Object {
-                          "width": 30,
+                          "width": "60%",
                         }
                       }
                     />
@@ -499,6 +512,7 @@ Array [
                 >
                   <a
                     href="#"
+                    onClick={[Function]}
                   >
                     Canal View Prinsengracht
                   </a>
@@ -512,7 +526,6 @@ Array [
             </article>
             <article
               className="cities__place-card place-card"
-              onMouseOver={[Function]}
             >
               
               <div
@@ -580,7 +593,7 @@ Array [
                     <span
                       style={
                         Object {
-                          "width": 25,
+                          "width": "50%",
                         }
                       }
                     />
@@ -596,6 +609,7 @@ Array [
                 >
                   <a
                     href="#"
+                    onClick={[Function]}
                   >
                     Nice, cozy, warm big bed apartment
                   </a>
