@@ -1,5 +1,6 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
+import {generateRateStyle} from "../../const";
 
 export class OfferDetail extends PureComponent {
   constructor(props) {
@@ -8,9 +9,6 @@ export class OfferDetail extends PureComponent {
 
   render() {
     const {title, gallery, description, bedrooms, maxGuests, isPremium, devices, price, type, rate, host} = this.props.offerData;
-    function generateRateStyle(rating) {
-      return `${rating * 20}%`;
-    }
     return (
       <main className="page__main page__main--property">
         <section className="property">
@@ -23,9 +21,9 @@ export class OfferDetail extends PureComponent {
           </div>
           <div className="property__container container">
             <div className="property__wrapper">
-              {isPremium ? (<div className="property__mark">
+              {isPremium && (<div className="property__mark">
                 <span>Premium</span>
-              </div>) : ``}
+              </div>)}
               <div className="property__name-wrapper">
                 <h1 className="property__name">
                   {title}
@@ -287,5 +285,5 @@ OfferDetail.propTypes = {
       name: PropTypes.string.isRequired,
       isSuper: PropTypes.bool.isRequired
     })
-  }),
+  }).isRequired,
 };

@@ -101,7 +101,7 @@ Main.propTypes = {
       name: PropTypes.string.isRequired,
       isSuper: PropTypes.bool.isRequired,
     })
-  })),
+  })).isRequired,
 
   openOfferDetail: PropTypes.func.isRequired
 };

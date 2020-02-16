@@ -66,7 +66,6 @@ exports[`<OfferDetail /> Testing 1`] = `
       <div
         className="property__wrapper"
       >
-        
         <div
           className="property__name-wrapper"
         >

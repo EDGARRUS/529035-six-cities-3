@@ -1,13 +1,11 @@
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
+import {generateRateStyle} from "../../const";
 
 export class OfferCard extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = {
-      isPremium: this.props.offerData.isPremium,
-    };
-    this._titleClickHandler = this._titleClickHandler.bind(this);
+    this.titleClickHandler = this.titleClickHandler.bind(this);
   }
 
   getPremiumMarkup() {
@@ -18,21 +16,17 @@ export class OfferCard extends PureComponent {
     );
   }
 
-  _titleClickHandler(offerData) {
+  titleClickHandler(offerData) {
     const {titleClickHandler} = this.props;
     titleClickHandler(offerData);
   }
 
   render() {
-    const {title, image, price, type, rate} = this.props.offerData;
-
-    function generateRateStyle(rating) {
-      return `${rating * 20}%`;
-    }
+    const {title, image, price, type, rate, isPremium} = this.props.offerData;
 
     return (
       <article className="cities__place-card place-card">
-        {this.state.isPremium ? this.getPremiumMarkup() : ``}
+        {isPremium && this.getPremiumMarkup()}
         <div className="cities__image-wrapper place-card__image-wrapper">
           <a href="#">
             <img className="place-card__image" src={image} width="260" height="200" alt="Place image"/>
@@ -59,7 +53,7 @@ export class OfferCard extends PureComponent {
           </div>
           <h2 className="place-card__name">
             <a href="#" onClick={() => {
-              this._titleClickHandler(this.props.offerData);
+              this.titleClickHandler(this.props.offerData);
             }}>{title}</a>
           </h2>
           <p className="place-card__type">{type}</p>
@@ -86,6 +80,6 @@ OfferCard.propTypes = {
       name: PropTypes.string.isRequired,
       isSuper: PropTypes.bool.isRequired,
     }),
-  }),
+  }).isRequired,
   titleClickHandler: PropTypes.func,
 };
