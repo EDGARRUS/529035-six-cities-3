@@ -1,10 +1,9 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import Main from "./main.jsx";
-
-const houses = [`Beautiful & luxurious apartment at great location`, `Wood and stone place`, `Wonderful hosue for rich people`];
+import {Main} from "./main.jsx";
+import {offersData} from "../../mocks/offers";
 
 it(`<Main /> Testing`, () => {
-  const tree = renderer.create(<Main houses={houses} onTitleButtonClick={() => {}}/>).toJSON();
+  const tree = renderer.create(<Main offersData={offersData} openOfferDetail={() => {}}/>).toJSON();
   expect(tree).toMatchSnapshot();
 });

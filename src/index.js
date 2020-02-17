@@ -1,8 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/app/app.jsx";
+import {offersData} from "./mocks/offers";
 
-const houses = [`Beautiful & luxurious apartment at great location`, `Wood and stone place`, `Wonderful hosue for rich people`];
-
-
-ReactDOM.render(<App houses={houses}/>, document.querySelector(`#root`));
+ReactDOM.render(<App offersData={offersData}/>, document.querySelector(`#root`));
