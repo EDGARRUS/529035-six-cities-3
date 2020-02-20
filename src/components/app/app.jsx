@@ -103,6 +103,7 @@ App.propTypes = {
   offersData: PropTypes.arrayOf(PropTypes.exact({
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
+    coordinates: PropTypes.arrayOf(PropTypes.number).isRequired,
     gallery: PropTypes.arrayOf(PropTypes.string).isRequired,
     price: PropTypes.number.isRequired,
     type: PropTypes.string.isRequired,

@@ -2,6 +2,7 @@ export const offersData = [
   {
     title: `Beautiful & luxurious apartment at great location`,
     image: `img/apartment-01.jpg`,
+    coordinates: [52.3909553943508, 4.85309666406198],
     gallery: [
       `img/apartment-01.jpg`,
       `img/apartment-02.jpg`,
@@ -38,6 +39,7 @@ export const offersData = [
   {
     title: `Wood and stone place`,
     image: `img/apartment-02.jpg`,
+    coordinates: [52.3809553943508, 4.939309666406198],
     gallery: [
       `img/apartment-01.jpg`,
       `img/apartment-02.jpg`,
@@ -70,6 +72,7 @@ export const offersData = [
   {
     title: `Canal View Prinsengracht`,
     image: `img/apartment-01.jpg`,
+    coordinates: [52.369553943508, 4.85309666406198],
     gallery: [
       `img/apartment-01.jpg`,
       `img/apartment-02.jpg`,
@@ -103,6 +106,7 @@ export const offersData = [
   {
     title: `Nice, cozy, warm big bed apartment`,
     image: `img/apartment-01.jpg`,
+    coordinates: [52.3909553943508, 4.929309666406198],
     gallery: [
       `img/apartment-01.jpg`,
       `img/apartment-02.jpg`,
