@@ -76,7 +76,7 @@ export class Main extends PureComponent {
 
             </section>
             <div className="cities__right-section">
-              <Map offersData={offersData} addClass={`cities__map map`}/>
+              <Map offersData={offersData} classNameForWrapper={`cities__map map`}/>
             </div>
           </div>
         </div>

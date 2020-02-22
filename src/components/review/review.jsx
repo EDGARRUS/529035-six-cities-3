@@ -44,5 +44,5 @@ Review.propTypes = {
     dateReview: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     offerId: PropTypes.number.isRequired,
-  }),
+  }).isRequired
 };

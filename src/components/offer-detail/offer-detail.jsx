@@ -91,7 +91,7 @@ export class OfferDetail extends PureComponent {
               <ReviewsList reviewsId={reviewsId}/>
             </div>
           </div>
-          <Map offersData={offersData} addClass={`property__map map`}/>
+          <Map offersData={offersData} classNameForWrapper={`property__map map`}/>
         </section>
         <div className="container">
           <section className="near-places places">
@@ -123,7 +123,7 @@ OfferDetail.propTypes = {
       avatar: PropTypes.string,
       name: PropTypes.string.isRequired,
       isSuper: PropTypes.bool.isRequired,
-    }),
+    }).isRequired,
     reviewsId: PropTypes.array.isRequired,
   }).isRequired,
 

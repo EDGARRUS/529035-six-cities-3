@@ -8,7 +8,7 @@ export class Map extends PureComponent {
     this.map = React.createRef();
   }
   render() {
-    return <section id="map" ref={this.map} className={this.props.addClass}></section>;
+    return <section id="map" ref={this.map} className={this.props.classNameForWrapper}></section>;
   }
   componentDidMount() {
     if (this.map.current) {
@@ -53,5 +53,5 @@ Map.propTypes = {
     }),
     reviewsId: PropTypes.arrayOf(PropTypes.number)
   })).isRequired,
-  addClass: PropTypes.string
+  classNameForWrapper: PropTypes.string
 };
