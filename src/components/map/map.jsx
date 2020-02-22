@@ -8,7 +8,7 @@ export class Map extends PureComponent {
     this.map = React.createRef();
   }
   render() {
-    return <section id="map" ref={this.map} className="cities__map map"></section>;
+    return <section id="map" ref={this.map} className={this.props.addClass}></section>;
   }
   componentDidMount() {
     if (this.map.current) {
@@ -33,6 +33,7 @@ export class Map extends PureComponent {
 
 Map.propTypes = {
   offersData: PropTypes.arrayOf(PropTypes.exact({
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     coordinates: PropTypes.arrayOf(PropTypes.number).isRequired,
@@ -49,6 +50,8 @@ Map.propTypes = {
       avatar: PropTypes.string,
       name: PropTypes.string.isRequired,
       isSuper: PropTypes.bool.isRequired,
-    })
+    }),
+    reviewsId: PropTypes.arrayOf(PropTypes.number)
   })).isRequired,
+  addClass: PropTypes.string
 };

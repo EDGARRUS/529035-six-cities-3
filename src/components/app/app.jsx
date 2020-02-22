@@ -3,11 +3,7 @@ import {Main} from "../main/main.jsx";
 import PropTypes from "prop-types";
 import {Switch, Route, BrowserRouter} from "react-router-dom";
 import {OfferDetail} from "../offer-detail/offer-detail.jsx";
-
-const ViewType = {
-  MAIN: `main`,
-  DETAIL: `detail`
-};
+import {ViewType} from "../../const.js";
 
 class App extends PureComponent {
   constructor(props) {
@@ -53,14 +49,14 @@ class App extends PureComponent {
         return (
           <React.Fragment>
             {this.renderHeader()}
-            <Main offersData={this.props.offersData} openOfferDetail={this.openOfferDetail}/>
+            <Main offersData={this.props.offersData} viewType={this.state.view} openOfferDetail={this.openOfferDetail}/>
           </React.Fragment>
         );
       case ViewType.DETAIL:
         return (
           <React.Fragment>
             {this.renderHeader()}
-            <OfferDetail offerData={this.state.activeOfferDetail}/>
+            <OfferDetail offerData={this.state.activeOfferDetail} viewType={this.state.view} openOfferDetail={this.openOfferDetail}/>
           </React.Fragment>
         );
     }
@@ -101,6 +97,7 @@ class App extends PureComponent {
 
 App.propTypes = {
   offersData: PropTypes.arrayOf(PropTypes.exact({
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     coordinates: PropTypes.arrayOf(PropTypes.number).isRequired,
@@ -117,7 +114,8 @@ App.propTypes = {
       avatar: PropTypes.string,
       name: PropTypes.string.isRequired,
       isSuper: PropTypes.bool.isRequired,
-    })
+    }),
+    reviewsId: PropTypes.arrayOf(PropTypes.number)
   })).isRequired,
 };
 
