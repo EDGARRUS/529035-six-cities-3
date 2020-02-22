@@ -1,7 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import {ReviewsList} from "./reviews-list";
-import {reviewsData} from "../../mocks/reviews";
 import {offersData} from "../../mocks/offers";
 
 it(`<ReviewsList /> Testing`, () => {

@@ -73,13 +73,13 @@ class App extends PureComponent {
           <Route exact path="/main">
             <React.Fragment>
               {this.renderHeader()}
-              <Main offersData={this.props.offersData} openOfferDetail={this.openOfferDetail}/>
+              <Main offersData={this.props.offersData} viewType={ViewType.MAIN} openOfferDetail={this.openOfferDetail}/>
             </React.Fragment>
           </Route>
           <Route exact path="/offer">
             <React.Fragment>
               {this.renderHeader()}
-              <OfferDetail offerData={this.props.offersData[1]}/>
+              <OfferDetail offerData={this.props.offersData[1]} openOfferDetail={this.openOfferDetail}/>
             </React.Fragment>
           </Route>
         </Switch>
