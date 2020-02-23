@@ -1,5 +1,6 @@
 export const offersData = [
   {
+    id: 1,
     title: `Beautiful & luxurious apartment at great location`,
     image: `img/apartment-01.jpg`,
     coordinates: [52.3909553943508, 4.85309666406198],
@@ -33,10 +34,12 @@ export const offersData = [
       avatar: `img/avatar-angelina.jpg`,
       name: `Sasha`,
       isSuper: true
-    }
+    },
+    reviewsId: [1, 2]
   },
 
   {
+    id: 2,
     title: `Wood and stone place`,
     image: `img/apartment-02.jpg`,
     coordinates: [52.3809553943508, 4.939309666406198],
@@ -66,10 +69,12 @@ export const offersData = [
       avatar: `img/avatar-angelina.jpg`,
       name: `Katy`,
       isSuper: true
-    }
+    },
+    reviewsId: [3]
   },
 
   {
+    id: 3,
     title: `Canal View Prinsengracht`,
     image: `img/apartment-01.jpg`,
     coordinates: [52.369553943508, 4.85309666406198],
@@ -100,10 +105,12 @@ export const offersData = [
       avatar: `img/avatar-angelina.jpg`,
       name: `Nikolay`,
       isSuper: true
-    }
+    },
+    reviewsId: [4, 5]
   },
 
   {
+    id: 4,
     title: `Nice, cozy, warm big bed apartment`,
     image: `img/apartment-01.jpg`,
     coordinates: [52.3909553943508, 4.929309666406198],
@@ -131,7 +138,8 @@ export const offersData = [
       avatar: `img/avatar-angelina.jpg`,
       name: `Eduard`,
       isSuper: false
-    }
+    },
+    reviewsId: []
   },
 
 ];

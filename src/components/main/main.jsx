@@ -6,6 +6,7 @@ import {Map} from "../map/map.jsx";
 export class Main extends PureComponent {
   constructor(props) {
     super(props);
+
   }
 
   render() {
@@ -71,11 +72,11 @@ export class Main extends PureComponent {
                 </ul>
               </form>
 
-              <OffersList offersData={offersData} openOfferDetail={this.props.openOfferDetail}/>
+              <OffersList offersData={offersData} viewType={this.props.viewType} openOfferDetail={this.props.openOfferDetail}/>
 
             </section>
             <div className="cities__right-section">
-              <Map offersData={offersData}/>
+              <Map offersData={offersData} classNameForWrapper={`cities__map map`}/>
             </div>
           </div>
         </div>
@@ -86,6 +87,7 @@ export class Main extends PureComponent {
 
 Main.propTypes = {
   offersData: PropTypes.arrayOf(PropTypes.exact({
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     coordinates: PropTypes.arrayOf(PropTypes.number).isRequired,
@@ -102,8 +104,10 @@ Main.propTypes = {
       avatar: PropTypes.string,
       name: PropTypes.string.isRequired,
       isSuper: PropTypes.bool.isRequired,
-    })
+    }),
+    reviewsId: PropTypes.arrayOf(PropTypes.number)
   })).isRequired,
 
-  openOfferDetail: PropTypes.func.isRequired
+  openOfferDetail: PropTypes.func.isRequired,
+  viewType: PropTypes.string.isRequired
 };
